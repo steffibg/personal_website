@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'TWKGhost';
+  src: url('./Web/TWKGhost-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -5,19 +12,20 @@ html, body {
 }
 
 body {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 18px;
+  font-family: 'TWKGhost', 'Times New Roman', Times, serif;
+  font-size: 16px;
 }
 
 .page-content {
   min-height: calc(100vh - 4rem);
-  padding: 1rem;
+  padding: 0rem;
 }
 
 h1, h2, h3, h4 {
   font-size: 20px;
   margin-bottom: 0;
-  margin-left: 15rem;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .caption {
@@ -98,11 +106,11 @@ h1, h2, h3, h4 {
 /* Layout Text & Bild */
 .about-layout {
   display: flex;
-  flex-wrap:
+  /*flex-wrap: wrap;*/
   align-content: right;
-  gap: 4rem;
+  gap: 3rem;
   align-items: flex-start;
-  margin-top: 0rem;
+  margin-top: 1.5rem;
 }
 
 .about-layout .text-content {
@@ -126,13 +134,13 @@ h1, h2, h3, h4 {
 /* Querformat */
 .about-layout .image-content img.landscape,
 .about-layout .image-content video.landscape {
-  max-width: 675px;
+  max-width: 690px;
 }
 
 /* Hochformat */
 .about-layout .image-content img.portrait,
 .about-layout .image-content video.portrait {
-  max-width: 675px;
+  max-width: 690px;
 }
 
 /* Kleines Portraitbild */
@@ -160,12 +168,13 @@ h1, h2, h3, h4 {
   .about-layout .text-content {
     flex: 1 1 1000%;
     margin-left: 15rem;
-    max-width: 55ch;
+    max-width: 50ch;
   }
 
   .about-layout .image-content {
     flex: 1 1 55%;
     max-width: 100%;
+    align-content: right;
   }
 
   .about-layout .image-content img,
