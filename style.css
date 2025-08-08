@@ -107,11 +107,11 @@ h1, h2, h3, h4 {
 /* Layout Text & Bild */
 .about-layout {
   display: flex;
-  /*flex-wrap: wrap;*/
   align-content: right;
   gap: 3rem;
   align-items: flex-start;
   margin-top: 1.5rem;
+  flex-wrap: wrap; /* <--- das ist wichtig */
 }
 
 .about-layout .text-content {
@@ -124,8 +124,16 @@ h1, h2, h3, h4 {
   max-width: 100%;
 }
 
+/* Querformat unter dem Text */
+.about-layout .landscape-wrapper {
+  flex: 1 1 100%;
+  margin-top: 1.5rem;
+}
+
 .about-layout .image-content img,
-.about-layout .image-content video {
+.about-layout .image-content video,
+.about-layout .landscape-wrapper img,
+.about-layout .landscape-wrapper video {
   display: block;
   width: 100%;
   height: auto;
@@ -134,7 +142,9 @@ h1, h2, h3, h4 {
 
 /* Querformat */
 .about-layout .image-content img.landscape,
-.about-layout .image-content video.landscape {
+.about-layout .image-content video.landscape,
+.about-layout .landscape-wrapper img.landscape,
+.about-layout .landscape-wrapper video.landscape {
   max-width: 690px;
 }
 
@@ -158,7 +168,8 @@ h1, h2, h3, h4 {
 
   .text-content,
   .about-layout .text-content,
-  .about-layout .image-content {
+  .about-layout .image-content,
+  .about-layout .landscape-wrapper {
     max-width: 100%;
     flex: 1 1 100%;
   }
@@ -176,6 +187,12 @@ h1, h2, h3, h4 {
     flex: 1 1 55%;
     max-width: 100%;
     align-content: right;
+  }
+
+  .about-layout .landscape-wrapper {
+    flex: 1 1 100%;
+    margin-left: 15rem;
+    max-width: 690px;
   }
 
   .about-layout .image-content img,
