@@ -100,7 +100,7 @@ h1, h2, h3, h4 {
   flex-wrap: wrap;
   gap: 1.5rem;
   align-items: flex-start;
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 
 .about-layout .text-content {
@@ -130,7 +130,7 @@ h1, h2, h3, h4 {
 /* Hochformat */
 .about-layout .image-content img.portrait,
 .about-layout .image-content video.portrait {
-  max-width: 672px;
+  max-width: 975px;
 }
 
 /* Kleines Portraitbild */
@@ -157,7 +157,7 @@ h1, h2, h3, h4 {
 @media (min-width: 1200px) {
   .about-layout .text-content {
     flex: 1 1 40%;
-    max-width: 55ch;
+    max-width: 65ch;
   }
 
   .about-layout .image-content {
