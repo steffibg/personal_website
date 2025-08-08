@@ -18,7 +18,7 @@ body {
 
 .page-content {
   min-height: calc(100vh - 4rem);
-  padding: 0rem;
+  padding: 0.5rem;
 }
 
 h1, h2, h3, h4 {
