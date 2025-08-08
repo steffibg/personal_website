@@ -17,6 +17,7 @@ body {
 h1, h2, h3, h4 {
   font-size: 20px;
   margin-bottom: 0;
+  margin-left: 15rem;
 }
 
 .caption {
@@ -98,7 +99,8 @@ h1, h2, h3, h4 {
 .about-layout {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  align-content: right;
+  gap: 5rem;
   align-items: flex-start;
   margin-top: 0rem;
 }
@@ -124,13 +126,13 @@ h1, h2, h3, h4 {
 /* Querformat */
 .about-layout .image-content img.landscape,
 .about-layout .image-content video.landscape {
-  max-width: 975px;
+  max-width: 675px;
 }
 
 /* Hochformat */
 .about-layout .image-content img.portrait,
 .about-layout .image-content video.portrait {
-  max-width: 975px;
+  max-width: 675px;
 }
 
 /* Kleines Portraitbild */
@@ -156,8 +158,9 @@ h1, h2, h3, h4 {
 /* Große Bildschirme/Beamer */
 @media (min-width: 1200px) {
   .about-layout .text-content {
-    flex: 1 1 40%;
-    max-width: 65ch;
+    flex: 1 1 1000%;
+    margin-left: 15rem;
+    max-width: 55ch;
   }
 
   .about-layout .image-content {
