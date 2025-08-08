@@ -6,71 +6,180 @@
 }
 
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'TWKGhost', 'Times New Roman', Times, serif;
-  font-size: 18px;
-  background: white;
-  color: black;
 }
 
-/* Standard layout */
-.about-layout {
+body {
+  font-family: 'TWKGhost', 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+
+.page-content {
+  min-height: calc(100vh - 4rem);
+  margin-left: 1rem;
+  padding: 0rem;
+}
+
+h1, h2, h3, h4 {
+  font-size: 20px;
+  margin-bottom: 0;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.caption {
+  font-size: 16px;
+}
+
+.text-button-wrap {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 2rem;
-  align-items: flex-start;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
-/* Text nimmt standardmäßig 50 % Breite */
-.about-layout .text-content {
-  flex: 1 1 50%;
+.text-content {
   max-width: 55ch;
 }
 
-/* Image content Standard */
-.about-layout .image-content {
-  flex: 1 1 40%;
+.button-content img {
+  width: 150px;
+  height: 47px;
 }
 
-/* Querformat unter Text */
-.about-layout .image-content .landscape {
-  display: block;
-  width: 100%;
-  margin-top: 2rem;
-}
-
-/* Hochformat neben Text */
-.about-layout .image-content .portrait {
-  display: block;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-/* Querformat unter Text -> volle Breite */
-.about-layout .landscape-wrapper {
-  flex: 1 1 100%;
-  margin-top: 1rem;
-}
-
-/* Bildgröße */
-.image-content img,
-.image-content video {
+.video-gallery video {
   max-width: 100%;
   height: auto;
   display: block;
+  margin-bottom: 1rem;
 }
 
-/* Responsive */
+.underline-link {
+  text-decoration: underline;
+  color: #0000EE;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.nav-list li::before {
+  content: "★";
+  color: #000;
+  margin-right: 0.5rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
+}
+
+.text-block {
+  max-width: 60ch;
+  margin-top: 1rem;
+}
+
+.imprint {
+  padding: 1rem;
+  margin-top: 4rem;
+  font-size: 18px;
+  text-align: left;
+}
+
+.imprint a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.imprint a:hover {
+  text-decoration: underline;
+}
+
+/* Layout Text & Bild */
+.about-layout {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  align-content: right;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.about-layout .text-content {
+  flex: 1 1 40%;
+  max-width: 55ch; 
+}
+
+.about-layout .image-content {
+  flex: 1 1 55%;
+  max-width: 100%;
+}
+
+.about-layout .image-content img,
+.about-layout .image-content video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Querformat */
+.about-layout .image-content img.landscape,
+.about-layout .image-content video.landscape {
+  max-width: 690px;
+}
+
+/* Hochformat */
+.about-layout .image-content img.portrait,
+.about-layout .image-content video.portrait {
+  max-width: 690px;
+}
+
+/* Kleines Portraitbild */
+.about-layout .image-content img.portrait.small-image {
+  max-width: 12.5%;
+}
+
+/* Responsive Layout */
 @media (max-width: 768px) {
-  .about-layout {
+  .text-button-wrap {
     flex-direction: column;
+    align-items: flex-start;
   }
 
+  .text-content,
   .about-layout .text-content,
   .about-layout .image-content {
+    max-width: 100%;
     flex: 1 1 100%;
+  }
+}
+
+/* Große Bildschirme/Beamer */
+@media (min-width: 1200px) {
+  .about-layout .text-content {
+    flex: 1 1 1000%;
+    margin-left: 15rem;
+    max-width: 50ch;
+  }
+
+  .about-layout .image-content {
+    flex: 1 1 55%;
+    max-width: 100%;
+    align-content: right;
+  }
+
+  .about-layout .image-content img,
+  .about-layout .image-content video {
+    width: 100%;
   }
 }
