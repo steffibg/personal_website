@@ -22,6 +22,17 @@ document.querySelectorAll('.carousel').forEach(function (carousel) {
     current = (index + slides.length) % slides.length;
     slides[current].hidden = false;
     if (counter) counter.textContent = (current + 1) + ' / ' + slides.length;
+    preloadNext();
+  }
+
+  // quietly load the next image in the background,
+  // so clicking → feels instant
+  function preloadNext() {
+    var next = slides[(current + 1) % slides.length];
+    if (next.tagName === 'IMG' && !next.dataset.preloaded) {
+      new Image().src = next.currentSrc || next.src;
+      next.dataset.preloaded = '1';
+    }
   }
 
   slides.forEach(function (slide, i) { slide.hidden = i !== 0; });
@@ -31,6 +42,8 @@ document.querySelectorAll('.carousel').forEach(function (carousel) {
     if (nav) nav.hidden = true;
     return;
   }
+
+  preloadNext();
 
   prevBtn.addEventListener('click', function () { show(current - 1); });
   nextBtn.addEventListener('click', function () { show(current + 1); });
