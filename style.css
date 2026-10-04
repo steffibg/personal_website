@@ -14,7 +14,7 @@ html, body {
 
 body {
   font-family: 'TWKGhost', 'Times New Roman', Times, serif;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .page-content {
@@ -24,14 +24,14 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-size: 20px;
+  font-size: 14px;
   margin-bottom: 0;
   margin-left: 0;
   margin-top: 0.5rem;
 }
 
 .caption {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .text-button-wrap {
@@ -92,7 +92,7 @@ h1, h2, h3, h4 {
 .imprint {
   padding: 1rem;
   margin-top: 4rem;
-  font-size: 16px;
+  font-size: 14px;
   text-align: left;
 }
 
